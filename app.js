@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const analyticsRoutes = require('./routes/analytics');
 const authRoutes = require('./routes/auth');
@@ -7,7 +8,13 @@ const categoryRoutes = require('./routes/category');
 const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
 
+const keys = require('./config/keys');
+
 const app = express();
+
+mongoose.connect(keys.mongoUri)
+    .then(() => console.log('----MONGO DB CONNECTED----'))
+    .catch((err) => console.error('----MONGO DB ERROR----', err))
 
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
