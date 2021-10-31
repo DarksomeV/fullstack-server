@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -15,6 +16,9 @@ const app = express();
 mongoose.connect(keys.mongoUri)
     .then(() => console.log('----MONGO DB CONNECTED----'))
     .catch((err) => console.error('----MONGO DB ERROR----', err))
+
+app.use(passport.initialize())
+require('./middlware/passport')(passport);
 
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
