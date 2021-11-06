@@ -1,4 +1,6 @@
 .gitignore
 node_modules
-config/
+config/keys.dev.js
+frontend/
+uploads/
 .idea
