@@ -12,7 +12,6 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm run start --prefix frontend",
     "server": "nodemon index",
-    "preinstall": "npm install -g angular-cli",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run frontend-install && npm run build --prefix frontend"
   },
   "keywords": [
