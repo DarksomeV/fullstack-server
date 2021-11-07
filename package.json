@@ -9,8 +9,6 @@
   },
   "scripts": {
     "start": "node index",
-    "frontend-install": "npm install --prefix frontend",
-    "frontend": "npm run start --prefix frontend",
     "server": "nodemon index"
   },
   "keywords": [

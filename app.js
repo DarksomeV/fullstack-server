@@ -33,15 +33,4 @@ app.use('/api/category', categoryRoutes)
 app.use('/api/order', orderRoutes)
 app.use('/api/position', positionRoutes)
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('frontend/dist/fullstack-client'));
-//     app.get('*', (req, res) => {
-//         res.sendFile(
-//             path.resolve(
-//                 __dirname, 'frontend', 'dist', 'fullstack-client', 'index.html'
-//             )
-//         )
-//     })
-// }
-
 module.exports = app;
