@@ -9,7 +9,7 @@ module.exports.getAll = async function (req, res) {
             user: req.user.id
         })
 
-        res.status(200).json(categories)
+        res.cookie('experiment', 'true', { secure: false, httpOnly: true }).status(200).json(categories);
     } catch (e) {
         errorHandler(res, e)
     }
